@@ -1,12 +1,16 @@
 package com.kaidike.account.domain.model.account;
 
-public interface AccountRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-    Account findAccount(String countryCode, String mobile);
+public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    Account findAccount(String unionID);
+    Account findByCountryCodeAndMobile(String countryCode, String mobile);
 
+    Account findByUnionID(String unionID);
+
+    @Query("UPDATE Account SET password=?2 WHERE id=?1")
     void updatePassword(Long id, String password);
 
-    void save(Account account);
+    Account save(Account account);
 }

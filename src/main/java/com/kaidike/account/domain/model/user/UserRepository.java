@@ -1,8 +1,8 @@
 package com.kaidike.account.domain.model.user;
 
-public interface UserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    User findUser(Long id);
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    void save(User user);
+    User save(User user);
 }

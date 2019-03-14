@@ -1,7 +1,9 @@
 package com.kaidike.account.domain.model.sns;
 
-public interface WechatUserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    void save(WechatUser wechatUser);
+public interface WechatUserRepository extends JpaRepository<WechatUser, Long> {
+
+    WechatUser save(WechatUser wechatUser);
 
 }

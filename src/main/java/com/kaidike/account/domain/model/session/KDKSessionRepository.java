@@ -1,7 +1,9 @@
 package com.kaidike.account.domain.model.session;
 
-public interface KDKSessionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    String save(String value);
+public interface KDKSessionRepository extends JpaRepository<KDKSession, Long> {
+
+    KDKSession save(String value);
 
 }

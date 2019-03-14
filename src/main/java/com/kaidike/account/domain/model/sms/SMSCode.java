@@ -7,6 +7,7 @@ public class SMSCode {
     private String countryCode;
     private String mobile;
     private String code;
+    private String type;
     private Long sendTime;
     private Long expiredTime;
 
@@ -56,6 +57,14 @@ public class SMSCode {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getCode() {
